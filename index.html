@@ -17,21 +17,22 @@
 
         <div class="header-hero">
             <div class="header-hero__transparent__background">
-                <div class="header-hero__menu-logo__container">
+                <div class="container header-hero__menu-logo__container">
 
                     <div class="header-hero__logo">
                         <a href="/">
                             <img src="./assets/img/icon-clip.svg" alt="logotipo del sitio" />
+                            CLIP
                         </a>
                     </div>
 
                     <nav class="header-hero__menu">
                         <ul>
-                            <li class="menu-list-item__active">
-                                <a href="/">Inicio</a>
+                            <li>
+                                <a class="active" href="/">Inicio</a>
                             </li>
                             <li>
-                                <a href="#">Nostros</a>
+                                <a href="#">Nosotros</a>
                             </li>
                             <li>
                                 <a href="#">Ubicación</a>
@@ -44,11 +45,12 @@
 
                 </div>
 
-                <div class="search-container">
-
-                    <i class="fas fa-search"></i>
-                    <input type="text"/>
-
+                <div class="header-hero__search">
+                    <form class="search-form">
+                        <span>Todos</span>
+                        <input type="text" placeholder="Buscar producto..."/>
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
