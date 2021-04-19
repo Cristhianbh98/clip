@@ -17,12 +17,12 @@
 
         <div class="header-hero">
             <div class="header-hero__transparent__background">
-                <div class="container header-hero__menu-logo__container">
 
+                <div class="container header-hero__menu-logo__container">
                     <div class="header-hero__logo">
                         <a href="/">
                             <img src="./assets/img/icon-clip.svg" alt="logotipo del sitio" />
-                            CLIP
+                            <h1>CLIP</h1>
                         </a>
                     </div>
 
@@ -42,67 +42,70 @@
                             </li>
                         </ul>
                     </nav>
-
                 </div>
 
+                <!--Comienzo del buscador de la página-->
                 <div class="header-hero__search">
                     <form class="search-form">
                         <div class="form-content">
                             <div class="category-container">
                                 <span class="category">Todos</span>
-                                <div class="category-pick"></div>
+                                <div class="category-pick">
+
+                                    <label class="radio-container checked" data-field-name="radio-category">
+                                        <span class="radio__indicator"></span>
+                                        <span class="radio__link">Todos</span>
+                                    </label>
+                                    
+                                    <label class="radio-container" data-field-name="radio-category">
+                                        <span class="radio__indicator"></span>
+                                        <span class="radio__link">Cuadernos</span>
+                                    </label>
+
+                                    <label class="radio-container" data-field-name="radio-category">
+                                        <span class="radio__indicator"></span>
+                                        <span class="radio__link">Lapiceros</span>
+                                    </label>
+
+                                    <label class="radio-container" data-field-name="radio-category">
+                                        <span class="radio__indicator"></span>
+                                        <span class="radio__link">Hojas</span>
+                                    </label>
+                                    
+                                </div>
                             </div>
                             <input type="text" class="s_product" name="s_product" placeholder="Buscar producto..."/>
-                            <button type="submit"><i class="fas fa-search"></i></button>
+                            <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
                 </div>
+                <!--Fin del buscador de la página-->
+
             </div>
         </div>
     </header>
     <!--Fin del header de la página-->
 
-    <main class="main-content">
-        <section>
-            <h2>
-                En está página web podrás encontrar todo lo que necesites y buscas para tuoficina, además de verse 
-                bonito.
-            </h2>
-            <p>
-                Los materiales con los que está hechos estos productos son de buena calidad, ya que, 
-                damos todo lo mejor para ustedes nuestros clientes.
-            </p>
-        </section>
-        
-        <!--Inicio sección de productos-->
-        <section id="products">
-            <div id="product-menu">
-                <ul>
-                    <li>
-                        Cuadernos 
-                    </li>
-                    <li>
-                        libretas
-                    </li>
-                    <li>
-                        Lápices o bolígrafos 
-                    </li>
-                    <li>
-                        Libros
-                    </li>
-                </ul>
-            </div>
-            <div id="product-content">
-
-            </div>
-        </section>
-        <!--Fin sección de productos-->
+    <!--Comienzo del contenido principal de la página-->
+    <main id="main">
+        <div class="title__products container">
+            <h2>Nuestros Productos</h2>
+        </div>
+        <div class="container categories-products">
+            <button class="btn btn__category checked">Todos</button>
+            <button class="btn btn__category">Cuadernos</button>
+            <button class="btn btn__category">Lapiceros</button>
+            <button class="btn btn__category">Hojas</button>
+        </div>
     </main>
+    <!--Fin del contenido principal de la página-->
 
     <footer id="footer">
-        Nos encontrarás en Manta Muy pronto en Montecristi y Portoviejo !Envio GRATIS los Miércoles desde los $50.00!
-        Contáctenos al 0984545548Envíenos un correo 
-        <a href="mailto:kerlybacusoy22@hotmail.com">ahora</a>
+        <div class="container">
+            Nos encontrarás en Manta Muy pronto en Montecristi y Portoviejo !Envio GRATIS los Miércoles desde los $50.00!
+            Contáctenos al 0984545548Envíenos un correo 
+            <a href="mailto:kerlybacusoy22@hotmail.com">ahora</a>
+        </div>
     </footer>
 
 </body>
