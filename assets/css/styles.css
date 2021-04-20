@@ -475,3 +475,74 @@
  {
 	background-color: rgba(242, 53, 88, 0.8);
  }
+
+ /*
+  *Estilos de la paginación
+  */
+
+ .pagination
+ {
+	display: flex;
+	align-items: center;
+	flex-flow: row;
+	font-size: 1rem;
+ }
+
+ .pagination .p__item
+ {
+	margin-left: 0.5rem;
+	cursor: pointer;
+ }
+
+ .pagination .p__item
+ {
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s ease-out;
+ }
+
+ .pagination .p__item.actived,
+ .pagination .p__item:hover
+ {
+	background-color: var(--primary--color);
+	color: #fff;
+ }
+
+/*
+ *Estilos del footer
+ */
+
+ footer#footer
+ {
+	height: 350px;
+	width: 100%;
+ }
+
+ .footer-banner
+ {
+	background: url('../img/banner-clip.jpg');
+	height: inherit;
+	width: inherit;
+	background-size: cover;
+	background-position: bottom;
+ }
+
+ .footer-banner .footer-banner__transparent__background
+ {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	background-color: rgba(0, 0, 0, 0.8);
+ }
+
+ .footer-banner .footer-content
+ {
+	height: inherit;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+ }
