@@ -3,11 +3,20 @@
 if(document.querySelector('.hamburger-icon__container'))
 {
     const hamburguer_icon = document.querySelector('.hamburger-icon__container');
+    const menu = document.querySelector('nav.header-hero__menu');
     hamburguer_icon.addEventListener('click', animatedHamburguerIcon);
 
     function animatedHamburguerIcon()
     {
         this.querySelector('.hamburger-icon').classList.toggle('actived__hamburguer');
+        if(menu.style.maxHeight)
+        {
+            menu.style.maxHeight = null;
+        }
+        else
+        {
+            menu.style.maxHeight = menu.scrollHeight + 'px';
+        }
     }
 }
 

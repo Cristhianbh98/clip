@@ -193,9 +193,28 @@
 
  @media screen and (max-width: 850px )
  {
-	.header-hero__menu
+	nav.header-hero__menu
 	{
-		display: none;
+		max-height: 0;
+		overflow: hidden;
+		width: 100%;
+		position: absolute;
+		top: 120px;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.35);
+		transition: max-height 0.2s;
+	}
+
+	nav.header-hero__menu ul
+	{
+		display: flex;
+		flex-flow: column;
+		padding: 0.5rem 2rem;
+	}
+
+	nav.header-hero__menu ul > li
+	{
+		margin: 0.8rem 0;
 	}
 
 	.header-hero__menu__mobile
