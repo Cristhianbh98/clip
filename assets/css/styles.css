@@ -37,6 +37,14 @@
 	margin: auto;
  }
 
+ @media screen and (max-width: 850px )
+ {
+	div.container
+	{
+		padding: 1.5rem 1.5rem;
+	}
+ }
+
  a
  {
 	text-decoration: none;
@@ -126,6 +134,14 @@
 	display: none;
  }
 
+ .hamburger-icon__container
+ {
+	cursor: pointer;
+	height: 40px;
+    display: flex;
+    align-items: center;
+ }
+
  .hamburger-icon
  {
 	display: block;
@@ -133,7 +149,6 @@
 	height: 5px;
 	position: relative;
 	background-color: #fff;
-	cursor: pointer;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
  }
 
@@ -173,7 +188,7 @@
  .hamburger-icon.actived__hamburguer::after
  {
 	top: 0;
-	transform: rotate(135deg);
+	transform: rotate(-45deg);
  }
 
  @media screen and (max-width: 850px )
