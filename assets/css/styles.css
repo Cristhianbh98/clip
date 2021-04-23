@@ -332,6 +332,7 @@
 	width: 100%;
 	font-size: 1rem;
 	margin: .5rem 0;
+	cursor: pointer;
  }
 
  .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick .radio-container .radio__indicator
