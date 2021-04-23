@@ -1,4 +1,6 @@
-/*Menu hamburguesa animado*/
+/*--------------------------------------------*/
+//Menu hamburguesa animado
+/*--------------------------------------------*/
 
 if(document.querySelector('.hamburger-icon__container'))
 {
@@ -20,7 +22,9 @@ if(document.querySelector('.hamburger-icon__container'))
     }
 }
 
-/*Formulario de búsqueda*/
+/*--------------------------------------------*/
+//Formulario de búsqueda
+/*--------------------------------------------*/
 
 if(document.querySelector('#category__search__menu'))
 {
