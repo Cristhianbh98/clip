@@ -42,16 +42,19 @@ if(document.querySelector('#category__search__menu'))
     {
         if(e.target.classList.contains('radio__indicator') || e.target.classList.contains('radio__link') || e.target.classList.contains('radio-container'))
         {
-            //Eliminar la clase checked del elemento seleccionado
-            this.document.querySelector('label.checked').classList.toggle('checked');
-
-            //Actualizar el elemento seleccionado
             const label = findNearestParentLabel(e.target);
-            label.classList.toggle('checked');
+            if(!label.classList.contains('checked'))
+            {
+                //Eliminar la clase checked del elemento seleccionado
+                this.document.querySelector('label.checked').classList.toggle('checked');
 
-            //Actualizar el texto del elemento span.category
-            span_button_toggle.textContent = label.querySelector('.radio__link').textContent;
-            console.log(label.querySelector('.radio__link').textContent);
+                //Actualizar el elemento seleccionado
+                label.classList.toggle('checked');
+
+                //Actualizar el texto del elemento span.category
+                span_button_toggle.textContent = label.querySelector('.radio__link').textContent;
+                console.log(label.querySelector('.radio__link').textContent);
+            }
         }
     }
 
