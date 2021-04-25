@@ -60,6 +60,14 @@
 	width: 100%;
  }
 
+ @media screen and (max-width: 450px)
+ {
+	header#header
+	{
+		height: 550px;
+	}
+ }
+
  .header-hero
  {
 	background: url('../img/chica-con-lentes.jpg');
@@ -307,7 +315,7 @@
 
  .header-hero .header-hero__search form.search-form .form-content .category-container.actived .category-pick
  {
-	 display: block;
+	display: block;
  }
 
  .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick::before
@@ -391,6 +399,19 @@
 	color: #fff;
  }
 
+ @media screen and (max-width: 650px)
+ {
+	form.search-form .form-content .category-container
+	{
+		display: none;
+	}
+
+	.header-hero .header-hero__search form.search-form .form-content input.s_product
+	{
+		width: auto;
+	}
+ }
+
 /*
  *Estilos del contenido principal
  */
@@ -415,6 +436,7 @@
 	border: none;
 	outline: none;
 	font-size: 1rem;
+	font-weight: bold;
 	padding: 0.6rem 0;
 	width: 170px;
 	text-transform: uppercase;
@@ -426,7 +448,73 @@
  .categories-products button.btn.btn__category:hover,
  .categories-products button.btn.btn__category:focus
  {
-	 background-color: #F23557;
+	background-color: #F23557;
+ }
+
+ .categories-products__mobile
+ {
+	display: none;
+	width: 450px;
+ }
+
+ .categories-products__mobile span.category__selected
+ {
+	background-color:var(--primary--color);
+	color: #fff;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.6rem 0;
+	padding-left: 1rem;
+	display: block;
+	position: relative;
+	width: 170px;
+	text-transform: uppercase;
+	cursor: pointer;
+ }
+
+ .categories-products__mobile span.category__selected::after
+ {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10%;
+	border-left: 4px solid rgba(0,0,0,0);
+    border-right: 4px solid rgba(0,0,0,0);
+    border-top: 4px solid #fff;
+ }
+
+ .categories-products__mobile .all__btn__categories
+ {
+	z-index: 2;
+	display: flex;
+	position: absolute;
+	flex-flow: column;
+	align-items: flex-start;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s;
+	background-color: #fff;
+ }
+
+ .categories-products__mobile .all__btn__categories button.btn.btn__category
+ {
+	border-radius: 0;
+	text-align: start;
+	padding-left: 1rem;
+	border-bottom: 1px solid var(--primary--color);
+ }
+
+ @media screen and (max-width: 750px)
+ {
+	.categories-products
+	{
+		display: none;
+	}
+	.categories-products__mobile
+	{
+		display: block;
+	}
  }
 
  .products__container
@@ -613,6 +701,14 @@
  {
 	background-color: var(--primary--color);
 	color: #fff;
+ }
+
+ @media screen and (max-width: 750px)
+ {
+	.pagination
+	{
+		justify-content: center;
+	}
  }
 
 /*

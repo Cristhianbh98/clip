@@ -36,7 +36,7 @@ if(document.querySelector('#category__search__menu'))
     span_button_toggle.addEventListener('click', displayCategories);
     category_pick_container.addEventListener('click', (e) => { checkedLabel(e); });
 
-    /*Funciones*/
+    /*Functions*/
     function displayCategories()
     {
         category_container.classList.toggle('actived');
@@ -71,5 +71,36 @@ if(document.querySelector('#category__search__menu'))
             label = label.parentElement
         }
         return label;
+    }
+}
+
+
+/*--------------------------------------------*/
+//Lista de categorias de los productos - celular
+/*--------------------------------------------*/
+
+if(document.getElementById('category_select__mobile'))
+{
+    const category_mobile_container = document.getElementById('category_select__mobile')
+    const category_selected = category_mobile_container.querySelector('span.category__selected');
+
+    /*Events*/
+
+    category_selected.addEventListener('click', displayAllCategoriesMobile);
+
+    /*Functions*/
+
+    function displayAllCategoriesMobile()
+    {
+        const all_categories_container = category_mobile_container.querySelector('.all__btn__categories');
+
+        if(all_categories_container.style.maxHeight)
+        {
+            all_categories_container.style.maxHeight = null;
+        }
+        else
+        {
+            all_categories_container.style.maxHeight = all_categories_container.scrollHeight + 'px';
+        }
     }
 }
