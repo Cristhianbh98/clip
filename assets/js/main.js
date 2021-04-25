@@ -1,4 +1,142 @@
 /*--------------------------------------------*/
+//Todos los productos
+/*--------------------------------------------*/
+
+const products = [
+    {
+        title: 'Alicia en el país de las maravillas',
+        img: './assets/img/books/alicia-en-el-pais-de-las-maravillas.jpg',
+        brand: 'Alma',
+        price: '10.50',
+        category: 'Cuadernos'
+    },
+    {
+        title: 'El espía Inglés',
+        img: './assets/img/books/el-espia-ingles.png',
+        brand: 'Educa',
+        price: '11.50',
+        category: 'Cuadernos'
+    },
+    {
+        title: 'Cuaderno cuadros 100h',
+        img: './assets/img/books/notebook1.jpg',
+        brand: 'Moleskine',
+        price: '2.50',
+        category: 'Cuadernos'
+    }
+];
+
+/*Añadir los productos a la página*/
+if(document.getElementById('products-container'))
+{
+    const products_container = document.getElementById('products-container');
+    products.forEach((element)=>{
+        product = createProduct(element);
+        products_container.appendChild(product);
+    });
+}
+
+function createProduct(element)
+{
+    const product = document.createElement('DIV');
+    product.classList.add('product_container');
+    product.classList.add('product');
+
+    product.innerHTML = `
+        <div class="product__content">
+            <div class="product__image">
+                <img src="${element.img}" alt="${element.title}"/>
+            </div>
+
+            <div class="product__description">
+                <h4 class="product__brand">${element.brand}</h4>
+                <h3 class="product__title">${element.title}</h3>
+                <span class="product__price">$${element.price}</span>
+            </div>
+        </div>
+        <div class="product__options">
+            <div class="product__add">
+                <div class="minus"></div>
+                <div class="plus"></div>
+            </div>                    
+            <button class="btn btn__purchase">Añadir <span class="amount">0</span> por <span class="total">$0.00</span></button>
+        </div>
+    `;
+
+    return product;
+}
+
+/*--------------------------------------------*/
+//Opciones de producto
+/*--------------------------------------------*/
+
+if(document.getElementById('products-container'))
+{
+    const products_container = document.getElementById('products-container');
+
+    /*Events*/
+    products_container.addEventListener('click', (e)=>{productOptionsManager(e)})
+
+    /*Functions*/
+
+    function productOptionsManager(e)
+    {
+        if(e.target.classList.contains('plus')) addProduct(e);
+        if(e.target.classList.contains('minus') && e.target.classList.contains('actived')) subtractProduct(e);
+    }
+
+    function addProduct(e)
+    {
+        const product = findProductParent(e.target);
+
+        const price = product.querySelector('.product__price').textContent.substring(1);
+        const product_price = parseFloat(price,10);
+
+        const amount = parseInt(product.querySelector('span.amount').textContent,10);
+        const product_amount = parseInt(amount,10)
+
+        let new_product_amount = product_amount + 1;
+        let new_total = (product_price * new_product_amount).toFixed(2);
+
+        product.querySelector('span.amount').textContent = new_product_amount;
+        product.querySelector('span.total').textContent = '$' + new_total;
+
+        if(!product.querySelector('.minus').classList.contains('actived')) product.querySelector('.minus').classList.add('actived');
+        
+    }
+
+    function subtractProduct(e)
+    {
+        const product = findProductParent(e.target);
+
+        const price = product.querySelector('.product__price').textContent.substring(1);
+        const product_price = parseFloat(price,10);
+
+        const amount = parseInt(product.querySelector('span.amount').textContent,10);
+        const product_amount = parseInt(amount,10);
+
+        let new_product_amount = product_amount - 1;
+        let new_total = (product_price * new_product_amount).toFixed(2);
+
+        product.querySelector('span.amount').textContent = new_product_amount;
+        product.querySelector('span.total').textContent = '$' + new_total;
+
+        if(new_product_amount == 0) e.target.classList.remove('actived');
+        
+    }
+
+    function findProductParent(el)
+    {
+        let product = el;
+        while(!product.classList.contains('product'))
+        {
+            product = product.parentElement;
+        }
+        return product;
+    }
+}
+
+/*--------------------------------------------*/
 //Menu hamburguesa animado
 /*--------------------------------------------*/
 
@@ -68,7 +206,7 @@ if(document.querySelector('#category__search__menu'))
         let label = el;
         while(label.tagName != 'LABEL')
         {
-            label = label.parentElement
+            label = label.parentElement;
         }
         return label;
     }
