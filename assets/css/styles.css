@@ -618,10 +618,11 @@
  .product_container .product__options .product__add .minus
  {
 	position: relative;
-	border: 1px solid #ccc;
+	border: 1px solid var(--primary--color);
 	width: 40px;
 	height: 35px;
 	cursor: pointer;
+	opacity: 0.4;
  }
  .product_container .product__options .product__add .minus::after
  {
@@ -640,7 +641,7 @@
  .product_container .product__options .product__add .plus
  {
 	position: relative;
-	border: 1px solid #7a7a7a;
+	border: 1px solid var(--primary--color);
 	width: 40px;
 	height: 35px;
 	cursor: pointer;
@@ -674,6 +675,17 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+ }
+
+ .product_container .product__options .product__add .plus:hover
+ {
+	background-color: var(--primary--color);
+ }
+
+ .product_container .product__options .product__add .plus:hover::after,
+ .product_container .product__options .product__add .plus:hover::before
+ {
+	background-color: #fff;
  }
 
  .product_container .product__options .btn.btn__purchase
