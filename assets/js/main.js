@@ -2,36 +2,21 @@
 //Todos los productos
 /*--------------------------------------------*/
 
-const products = [
-    {
-        title: 'Alicia en el país de las maravillas',
-        img: './assets/img/books/alicia-en-el-pais-de-las-maravillas.jpg',
-        brand: 'Alma',
-        price: '10.50',
-        category: 'Cuadernos'
-    },
-    {
-        title: 'El espía Inglés',
-        img: './assets/img/books/el-espia-ingles.png',
-        brand: 'Educa',
-        price: '11.50',
-        category: 'Cuadernos'
-    },
-    {
-        title: 'Cuaderno cuadros 100h',
-        img: './assets/img/books/notebook1.jpg',
-        brand: 'Moleskine',
-        price: '2.50',
-        category: 'Cuadernos'
-    }
-];
+import { products } from './all-products.js';
+
+const total_pages = Math.floor(products.length);
 
 /*Añadir los productos a la página*/
 if(document.getElementById('products-container'))
 {
     const products_container = document.getElementById('products-container');
-    products.forEach((element)=>{
-        product = createProduct(element);
+    renderProducts(products,products_container);
+}
+
+function renderProducts(products = [],products_container)
+{
+    products.forEach( element =>{
+        const product = createProduct(element);
         products_container.appendChild(product);
     });
 }
