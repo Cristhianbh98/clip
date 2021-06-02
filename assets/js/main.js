@@ -2,6 +2,15 @@ import { products } from './all-products.js';
 
 let products_pages = slicePoducts(products);
 
+if(document.querySelector('nav.header-hero__menu'))
+{
+    const nav_menu = document.querySelector('nav.header-hero__menu');
+    const CURRENT_URI = window.location.href;
+
+    nav_menu.querySelector('#home').href = CURRENT_URI + '';
+    nav_menu.querySelector('#about').href = CURRENT_URI + '/about.html';
+    nav_menu.querySelector('#contact').href = CURRENT_URI + '/contact.html';
+}
 
 /*--------------------------------------------*/
 //Función para obtener los productos por categoría
