@@ -1,14 +1,45 @@
+import { products } from './all-products.js';
+
+let products_pages = slicePoducts(products);
+
+
+/*--------------------------------------------*/
+//Función para obtener los productos por categoría
+/*--------------------------------------------*/
+
+function getProductsByCategory(category)
+{
+    return new Promise((resolve, reject) =>
+    {
+        const product_by_category = products.filter( product => product.category === category )
+
+        if(!product_by_category)
+        {
+            const err = new Error();
+            err.message = 'No existe tal categoria';
+            reject(err)
+        }
+
+        resolve(product_by_category);
+
+    });
+}
+
+function slicePoducts(products)
+{
+    let i,j,products_pages = [],chunk = 9;
+
+    for (i=0,j=products.length; i<j; i+=chunk) 
+    {
+        products_pages = products_pages.concat({page: products_pages.length + 1 , data: [...products.slice(i,i+chunk)]});
+    }
+
+    return products_pages;
+}
+
 /*--------------------------------------------*/
 //Todos los productos
 /*--------------------------------------------*/
-
-import { products } from './all-products.js';
-
-let i,j,products_pages = [],chunk = 9;
-for (i=0,j=products.length; i<j; i+=chunk) 
-{
-    products_pages = products_pages.concat({page: products_pages.length + 1 , data: [...products.slice(i,i+chunk)]});
-}
 
 /*Añadir los productos a la página*/
 if(document.getElementById('products-container'))
@@ -63,9 +94,15 @@ function createProduct(element)
 if(document.querySelector('.pagination'))
 {
     const pagination_container = document.querySelector('.pagination');
-    const right_arrow = pagination_container.querySelector('.arrow-right.p__item')
     pagination_container.addEventListener('click', handleClickPagination);
 
+    renderAllPageItem();
+}
+
+function renderAllPageItem()
+{
+    const pagination_container = document.querySelector('.pagination');
+    const right_arrow = pagination_container.querySelector('.arrow-right.p__item');
     let i = 1, j = products_pages.length, page_item;
     for(i;i<=j;i++)
     {
@@ -340,6 +377,7 @@ if(document.getElementById('category_select'))
                 category_container.querySelector('.checked').classList.toggle('checked');
                 document.querySelector('span.category__selected').textContent = button_category.textContent;
                 button_category.classList.toggle('checked');
+                showProductsByCategory(button_category.textContent.toUpperCase());
             }
         }
     }
@@ -379,6 +417,7 @@ if(document.getElementById('category_select__mobile'))
             all_buttons_category.forEach((item) => {
                 if(item.textContent == category_selected.textContent) item.classList.toggle('checked');
             });
+            showProductsByCategory(button_category.textContent.toUpperCase());
         }
     }
 
@@ -392,5 +431,58 @@ if(document.getElementById('category_select__mobile'))
         {
             all_categories_container.style.maxHeight = all_categories_container.scrollHeight + 'px';
         }
+    }
+}
+
+/*--------------------------------------------*/
+//Mostrar los productos por categoria
+/*--------------------------------------------*/
+
+function showProductsByCategory(category)
+{
+    if(category === 'TODOS')
+    {
+        const pages = slicePoducts(products);
+        products_pages = pages;
+
+        /*Productos*/
+        const products_container = document.getElementById('products-container');
+        const products_to_render = products_pages[0].data;
+
+        products_container.innerHTML = '';
+
+        renderProducts(products_to_render,products_container);
+
+        /*Paginación*/
+
+        const actual_pages = document.querySelectorAll('div.pagination.container .page.p__item');            
+        actual_pages.forEach( el => el.remove());
+
+        renderAllPageItem();
+    }
+    else
+    {
+        getProductsByCategory(category)
+        .then( products => {
+            const pages = slicePoducts(products);
+            
+            products_pages = pages;
+            
+            /*Productos*/
+            const products_container = document.getElementById('products-container');
+            const products_to_render = products_pages[0].data;
+
+            products_container.innerHTML = '';
+
+            renderProducts(products_to_render,products_container);
+
+            /*Paginación*/
+
+            const actual_pages = document.querySelectorAll('div.pagination.container .page.p__item');            
+            actual_pages.forEach( el => el.remove());
+
+            renderAllPageItem();
+
+        })
     }
 }
