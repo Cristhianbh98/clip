@@ -8,8 +8,8 @@ if(document.querySelector('nav.header-hero__menu'))
     const CURRENT_URI = window.location.href;
 
     nav_menu.querySelector('#home').href = CURRENT_URI + '';
-    nav_menu.querySelector('#about').href = CURRENT_URI + '/about.html';
-    nav_menu.querySelector('#contact').href = CURRENT_URI + '/contact.html';
+    nav_menu.querySelector('#about').href = CURRENT_URI + 'about.html';
+    nav_menu.querySelector('#contact').href = CURRENT_URI + 'contact.html';
 }
 
 /*--------------------------------------------*/
