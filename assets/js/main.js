@@ -56,22 +56,44 @@ function createProduct(element)
     return product;
 }
 
-/*Paginación de los productos*/
+/*--------------------------------------------*/
+//Paginación de los productos
+/*--------------------------------------------*/
+
 if(document.querySelector('.pagination'))
 {
     const pagination_container = document.querySelector('.pagination');
+    const right_arrow = pagination_container.querySelector('.arrow-right.p__item')
+    pagination_container.addEventListener('click', handleClickPagination);
 
-    pagination_container.addEventListener('click', handleClickPagination)
+    let i = 1, j = products_pages.length, page_item;
+    for(i;i<=j;i++)
+    {
+        page_item = generatePageItem(i);
+        if(i === 1) page_item.classList.add('actived');
+        pagination_container.insertBefore(page_item,right_arrow);
+    }
+}
+
+function generatePageItem(number)
+{
+    const DIV = document.createElement('DIV');
+    DIV.classList.add('p__item');
+    DIV.classList.add('page');
+    const SPAN = document.createElement('SPAN');
+    SPAN.textContent = number;
+    DIV.appendChild(SPAN);
+
+    return DIV;
 }
 
 function handleClickPagination(e)
 {
     if((e.target.classList.contains('p__item') && e.target.classList.contains('page')) || e.target.tagName === 'SPAN') makeCurrentPagination(e.target);
 
-    if((e.target.classList.contains('p__item') && e.target.classList.contains('row')) || e.target.tagName === 'I') handleRow(e.target);
+    if((e.target.classList.contains('p__item') && e.target.classList.contains('arrow')) || e.target.tagName === 'I') handleRow(e.target);
 
     handleHiddenArrows();
-
 }
 
 function makeCurrentPagination(el)
@@ -88,10 +110,10 @@ function makeCurrentPagination(el)
 
 function handleRow(el)
 {   
-    const row_item = findNearestParentDIV(el);
+    const arrow_item = findNearestParentDIV(el);
 
-    if(row_item.classList.contains('row-left')) moveCurrentPageToLeft();
-    if(row_item.classList.contains('row-right')) moveCurrentPageToRight();
+    if(arrow_item.classList.contains('arrow-left')) moveCurrentPageToLeft();
+    if(arrow_item.classList.contains('arrow-right')) moveCurrentPageToRight();
 
 }
 
@@ -130,8 +152,8 @@ function showCurrentPage(el)
 
 function handleHiddenArrows()
 {
-    const left_arrow = document.querySelector('.row-left.row');
-    const right_arrow = document.querySelector('.row-right.row');
+    const left_arrow = document.querySelector('.arrow-left.arrow');
+    const right_arrow = document.querySelector('.arrow-right.arrow');
     const current_page = Number(document.querySelector('.p__item.page.actived').textContent);
     if(current_page === 1 && !left_arrow.classList.contains('hidden'))  left_arrow.classList.add('hidden');
     if(current_page === products_pages.length && !right_arrow.classList.contains('hidden'))  right_arrow.classList.add('hidden');

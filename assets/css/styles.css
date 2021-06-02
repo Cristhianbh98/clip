@@ -798,9 +798,9 @@
 	transition: background-color 0.2s ease-out;
  }
 
- .pagination .p__item.hidden
+ .pagination .p__item.arrow.hidden
  {
-	 visibility: hidden;
+	visibility: hidden;
  }
 
  .pagination .p__item.actived,
