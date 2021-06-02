@@ -4,10 +4,6 @@
 
 import { products } from './all-products.js';
 
-const firsts_pages = Math.floor(products.length / 9);
-const final_page = products.length % 9;
-const total_pages = firsts_pages + (final_page > 0 ? 1 : 0);
-
 let i,j,products_pages = [],chunk = 9;
 for (i=0,j=products.length; i<j; i+=chunk) 
 {
@@ -74,6 +70,8 @@ function handleClickPagination(e)
 
     if((e.target.classList.contains('p__item') && e.target.classList.contains('row')) || e.target.tagName === 'I') handleRow(e.target);
 
+    handleHiddenArrows();
+
 }
 
 function makeCurrentPagination(el)
@@ -84,6 +82,7 @@ function makeCurrentPagination(el)
     {
         document.querySelector('.pagination .p__item.page.actived').classList.remove('actived');
         p_item.classList.add('actived');
+        showCurrentPage(p_item);
     }
 }
 
@@ -104,6 +103,7 @@ function moveCurrentPageToRight()
     {
         current_page.classList.remove('actived');
         next_element.classList.add('actived');
+        showCurrentPage(next_element);
     }
 }
 
@@ -115,7 +115,28 @@ function moveCurrentPageToLeft()
     {
         current_page.classList.remove('actived');
         previous_element.classList.add('actived');
+        showCurrentPage(previous_element);
     }
+}
+
+function showCurrentPage(el)
+{
+    const page = Number(el.textContent);
+    const products_container = document.getElementById('products-container');
+    const products_to_render = products_pages[page-1].data;
+    products_container.innerHTML = '';
+    renderProducts(products_to_render,products_container);
+}
+
+function handleHiddenArrows()
+{
+    const left_arrow = document.querySelector('.row-left.row');
+    const right_arrow = document.querySelector('.row-right.row');
+    const current_page = Number(document.querySelector('.p__item.page.actived').textContent);
+    if(current_page === 1 && !left_arrow.classList.contains('hidden'))  left_arrow.classList.add('hidden');
+    if(current_page === products_pages.length && !right_arrow.classList.contains('hidden'))  right_arrow.classList.add('hidden');
+    if(current_page > 1 && left_arrow.classList.contains('hidden'))  left_arrow.classList.remove('hidden');
+    if(current_page < products_pages.length && right_arrow.classList.contains('hidden'))  right_arrow.classList.remove('hidden');
 }
 
 function findNearestParentDIV(el)
@@ -250,14 +271,13 @@ if(document.querySelector('#category__search__menu'))
             if(!label.classList.contains('checked'))
             {
                 //Eliminar la clase checked del elemento seleccionado
-                this.document.querySelector('label.checked').classList.toggle('checked');
+                document.querySelector('label.checked').classList.toggle('checked');
 
                 //Actualizar el elemento seleccionado
                 label.classList.toggle('checked');
 
                 //Actualizar el texto del elemento span.category
                 span_button_toggle.textContent = label.querySelector('.radio__link').textContent;
-                console.log(label.querySelector('.radio__link').textContent);
             }
         }
     }

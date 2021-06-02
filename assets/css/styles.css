@@ -798,6 +798,11 @@
 	transition: background-color 0.2s ease-out;
  }
 
+ .pagination .p__item.hidden
+ {
+	 visibility: hidden;
+ }
+
  .pagination .p__item.actived,
  .pagination .p__item:hover
  {
