@@ -955,3 +955,22 @@
 		align-items: center;
 	}
  }
+
+/*--------------------------------------------------------*
+ *Styles for about page
+ *--------------------------------------------------------*/
+
+/*-----------------------------------*
+ *Estilos de la cabecera
+ *-----------------------------------*/
+ header#header.no-search-item
+ {
+	height: 500px;
+ }
+
+ header#header.no-search-item.about .header-hero
+ {
+	background: url('../img/about-backgroundjpg.jpg');
+	background-size: cover;
+	background-position: 70% 30%;
+ }
