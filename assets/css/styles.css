@@ -464,7 +464,6 @@
  .categories-products__mobile
  {
 	display: none;
-	width: 450px;
  }
 
  .categories-products__mobile span.category__selected

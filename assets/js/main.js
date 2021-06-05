@@ -5,11 +5,13 @@ let products_pages = slicePoducts(products);
 if(document.querySelector('nav.header-hero__menu'))
 {
     const nav_menu = document.querySelector('nav.header-hero__menu');
-    const CURRENT_URI = window.location.href;
+    const CURRENT_URI = window.location.origin;
 
-    nav_menu.querySelector('#home').href = CURRENT_URI + '';
-    nav_menu.querySelector('#about').href = CURRENT_URI + 'about.html';
-    nav_menu.querySelector('#contact').href = CURRENT_URI + 'contact.html';
+    if(CURRENT_URI === 'https://cristhianbh98.github.io') CURRENT_URI = CURRENT_URI + '/CLIP/';
+
+    nav_menu.querySelector('#home').href = CURRENT_URI + '/';
+    nav_menu.querySelector('#about').href = CURRENT_URI + '/about.html';
+    nav_menu.querySelector('#contact').href = CURRENT_URI + '/contact.html';
 }
 
 /*--------------------------------------------*/
