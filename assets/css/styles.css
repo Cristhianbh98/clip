@@ -972,5 +972,72 @@
  {
 	background: url('../img/about-backgroundjpg.jpg');
 	background-size: cover;
+	background-attachment: fixed;
 	background-position: 70% 30%;
+ }
+
+/*-----------------------------------*
+ *Estilos del contenido principal
+ *-----------------------------------*/
+ .gray-bg
+ {
+	background: #F3F3F3;
+ }
+
+ .container.two-columns
+ {
+	display: flex;
+	flex-flow: row;
+	padding: 5rem 0;
+ }
+
+ .container.two-columns > div
+ {
+	width: 50%;
+ }
+
+ .content h2.title
+ {
+	color: var(--primary--color);
+	font-size: 2.75rem;
+ }
+
+ .content p
+ {
+	color: var(--thrid--color);
+	margin: 1.25rem 0;
+	text-align: justify;
+	font-size: 1rem;
+	padding-right: 6rem;
+ }
+
+ .img-container
+ {
+	display: flex;
+	justify-content: center;
+ }
+
+ .img-container > img
+ {
+	width: 80%;
+	height: auto;
+	border-radius: 3px;
+	transition: transform 0.2s linear;
+ }
+
+ .img-container > img:hover
+ {
+	transform: scale(0.9);
+ }
+
+ .post
+ {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+ }
+
+ .post .img-container
+ {
+	justify-content: flex-start;
  }
