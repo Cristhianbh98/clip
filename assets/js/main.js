@@ -343,6 +343,9 @@ if(document.querySelector('#category__search__menu'))
 
                 //Actualizar el texto del elemento span.category
                 span_button_toggle.textContent = label.querySelector('.radio__link').textContent;
+
+                //Toggle de menu
+                category_container.classList.toggle('actived');
             }
         }
     }

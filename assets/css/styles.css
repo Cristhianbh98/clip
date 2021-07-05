@@ -101,6 +101,12 @@
 	align-items: center;
 	color: var(--secondary--color);
 	font-weight: bold;
+	transition: transform 0.2s;
+ }
+
+ .header-hero__menu-logo__container .header-hero__logo a:hover
+ {
+	transform: scale(0.9);
  }
 
  .header-hero__menu-logo__container .header-hero__logo a > img
@@ -232,6 +238,7 @@
 		display: block;
 	}
  }
+
 
  /*-----------------------------------*
   * Estilos del buscador
@@ -867,6 +874,12 @@
 	align-items: center;
 	color: var(--secondary--color);
 	font-weight: bold;
+	transition: transform 0.2s;
+ }
+
+ .footer-banner .footer-content .footer__section__1 .footer__logo a:hover
+ {
+	 transform: scale(0.9);
  }
 
  .footer-banner .footer-content .footer__section__1 .footer__logo a > img
@@ -977,7 +990,7 @@
  }
 
 /*-----------------------------------*
- *Estilos del contenido principal
+ *Estilos del contenido principal de la página about
  *-----------------------------------*/
  .gray-bg
  {
@@ -1022,12 +1035,6 @@
 	width: 80%;
 	height: auto;
 	border-radius: 3px;
-	transition: transform 0.2s linear;
- }
-
- .img-container > img:hover
- {
-	transform: scale(0.9);
  }
 
  .post
