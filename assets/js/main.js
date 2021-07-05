@@ -1,18 +1,13 @@
+//Import products to show
 import { products } from './all-products.js';
 
+//Modules import
+import Links from './modules/Links.js';
+
+//Create an instance of the class
+const links = new Links();
+
 let products_pages = slicePoducts(products);
-
-if(document.querySelector('nav.header-hero__menu'))
-{
-    const nav_menu = document.querySelector('nav.header-hero__menu');
-    let CURRENT_URI = window.location.origin;
-
-    if(CURRENT_URI === 'https://cristhianbh98.github.io') CURRENT_URI += '/CLIP/';
-
-    nav_menu.querySelector('#home').href = CURRENT_URI + '/';
-    nav_menu.querySelector('#about').href = CURRENT_URI + '/about.html';
-    nav_menu.querySelector('#contact').href = CURRENT_URI + '/contact.html';
-}
 
 /*--------------------------------------------*/
 //Función para obtener los productos por categoría
