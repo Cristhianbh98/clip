@@ -5,11 +5,52 @@
 	<title> 𝑪𝒍𝒊𝒑 ❤✨ | Contáctenos.</title>
 	<link rel="shortcut icon" href="./assets/img/icon-clip.svg" type="image/x-icon" />
 	<!---CSS--->
-	<link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
 	<!--Font awesome-->
 	<script src="https://kit.fontawesome.com/aa9b23ce72.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+	<!--Comienzo del header de la página-->
+    <header id="header" class="no-search-item about">
+
+        <div class="header-hero">
+            <div class="header-hero__transparent__background">
+
+                <div class="container header-hero__menu-logo__container">
+                    <div class="header-hero__logo">
+                        <a id="header-logo__link" href="#">
+                            <img src="./assets/img/icon-clip.svg" alt="logotipo del sitio" />
+                            <h1>CLIP</h1>
+                        </a>
+                    </div>
+
+                    <div class="header-hero__menu__mobile">
+                        <div class="hamburger-icon__container">
+                            <div class="hamburger-icon"></div>
+                        </div>
+                    </div>
+
+                    <nav class="header-hero__menu">
+                        <ul>
+                            <li>
+                                <a id="home" href="#">Inicio</a>
+                            </li>
+                            <li>
+                                <a id="about" href="#">Nosotros</a>
+                            </li>
+                            <li>
+                                <a id="contact" class="active" href="#">Contáctenos</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!--Fin del header de la página-->
 
 	<form>
 		<h3>DATOS</h3>
@@ -24,7 +65,34 @@
 		<input type="submit" value="Entrar"/>	
 	</form>
 
+	<!--Inicio del footer-->
+    <footer id="footer">
+        <div class="footer-banner">
+            <div class="footer-banner__transparent__background">
+                <div class="container footer-content">
+                    <div class="footer__section__1">
+                        <div class="footer__logo">
+                            <a id="footer-logo__link" href="#">
+                                <img src="./assets/img/icon-clip.svg" alt="logotipo del sitio" />
+                                <h1>CLIP</h1>
+                            </a>
+                        </div>
+                        <div class="footer__description">
+                            <p>Clip es un tienda de útiles escolares, aquí podrás encontrar diferentes marcas de buena calidad a un buen precio para que regreses a clases sin ningún problema, contamos con la mejor atención en todo el Ecuador.</p>
+                        </div>
+                    </div>
+                    <hr class="footer__divider"/>
+                    <div class="footer__section__2">
+                        <span class="email__span"><i class="fas fa-envelope"></i><a href="mailto:contacto@clip.com.ec">contacto@clip.com.ec</a></span>
+                        <span><i class="fas fa-map-marker-alt"></i>Manta - Ecuador</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Fin del footer-->
+
 	<!--Scripts-->
-	<script type="module" src="./assets/js/main.js"></script>
+	<script src="./assets/js/bundle.min.js"></script>
 
 </html>

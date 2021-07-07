@@ -1,0 +1,23 @@
+{
+  "name": "clip",
+  "version": "1.0.0",
+  "description": "Este es un repositorio para la página de CLIP, es un proyecto personal para aprender a maquetar.",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild .\\assets\\js\\main.js --bundle --minify --sourcemap --outfile=.\\assets\\js\\bundle.min.js --define:process.env.NODE_ENV=\\\"production\\\"",
+    "build-css": "esbuild .\\assets\\css\\styles.css --minify --outfile=.\\assets\\css\\styles.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cristhianbh98/CLIP.git"
+  },
+  "author": "Cristhian Bacusoy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cristhianbh98/CLIP/issues"
+  },
+  "homepage": "https://github.com/Cristhianbh98/CLIP#readme",
+  "dependencies": {
+    "esbuild": "^0.12.15"
+  }
+}
