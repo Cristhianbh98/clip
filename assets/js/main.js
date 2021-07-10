@@ -1,5 +1,5 @@
 //Import products to show
-import { products } from './all-products.js';
+import { products } from './modules/all-products.js';
 
 //Modules import
 import Links from './modules/Links.js';
@@ -69,26 +69,7 @@ function createProduct(element)
     product.classList.add('product_container');
     product.classList.add('product');
 
-    product.innerHTML = `
-        <div class="product__content">
-            <div class="product__image">
-                <img src="${element.img}" alt="${element.title}"/>
-            </div>
-
-            <div class="product__description">
-                <h4 class="product__brand">${element.brand}</h4>
-                <h3 class="product__title">${element.title}</h3>
-                <span class="product__price">$${element.price}</span>
-            </div>
-        </div>
-        <div class="product__options">
-            <div class="product__add">
-                <div class="minus"></div>
-                <div class="plus"></div>
-            </div>                    
-            <button class="btn btn__purchase">Añadir <span class="amount">0</span> por <span class="total">$0.00</span></button>
-        </div>
-    `;
+    product.innerHTML = `<div class="product__content"><div class="product__image"><img src="${element.img}" alt="${element.title}"/></div><div class="product__description"><h4 class="product__brand">${element.brand}</h4><h3 class="product__title">${element.title}</h3><span class="product__price">$${element.price}</span></div></div><div class="product__options"><div class="product__add"><div class="minus"></div><div class="plus"></div></div><button class="btn btn__purchase">Añadir <span class="amount">0</span> por <span class="total">$0.00</span></button></div>`;
 
     return product;
 }
@@ -304,6 +285,32 @@ if(document.querySelector('.hamburger-icon__container'))
         else
         {
             menu.style.maxHeight = menu.scrollHeight + 'px';
+        }
+    }
+}
+/*--------------------------------------------*/
+//Cerrar formulario de busqueda y el contenedor de categorias para movil
+/*--------------------------------------------*/
+
+document.querySelector('body').addEventListener('click', (e) => handleBodyEvent(e.target))
+
+function handleBodyEvent(el)
+{
+    if(!el.classList.contains('category') && !el.classList.contains('category-pick') && !el.classList.contains('category-container'))
+    {
+        if(document.getElementById('category__search__menu').classList.contains('actived'))
+        {
+            document.getElementById('category__search__menu').classList.remove('actived');
+        } 
+    }
+
+    if(!el.classList.contains('all__btn__categories') && !el.classList.contains('category__selected') && !el.classList.contains('btn__category'))
+    {
+        const all_categories_container = document.getElementById('category_select__mobile').querySelector('.all__btn__categories');
+
+        if(all_categories_container.style.maxHeight)
+        {
+            all_categories_container.style.maxHeight = null;
         }
     }
 }

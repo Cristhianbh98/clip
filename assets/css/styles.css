@@ -1001,7 +1001,7 @@
  {
 	display: flex;
 	flex-flow: row;
-	padding: 5rem 0;
+	padding: 5rem 2rem;
  }
 
  .container.two-columns > div
@@ -1027,14 +1027,14 @@
  .img-container
  {
 	display: flex;
-	justify-content: center;
  }
 
  .img-container > img
  {
+	display: block;
 	width: 80%;
-	height: auto;
 	border-radius: 3px;
+	margin: auto;
  }
 
  .post
@@ -1047,4 +1047,55 @@
  .post .img-container
  {
 	justify-content: flex-start;
+ }
+
+ .post .img-container > img
+ {
+	margin: 0;
+ }
+
+ @media screen and (max-width: 700px)
+ {
+	.img-container > img
+	{
+		width: 70%;
+	}
+
+	.post .img-container > img
+	{
+		margin: auto;
+	}
+
+	.container.two-columns
+	{
+		flex-flow: column;
+		padding: 0;
+	}
+
+	.container.two-columns > div
+	{
+		width: 100%;
+	}
+
+	h2.title
+	{
+		text-align: center;
+	}
+
+	.content p
+	{
+		padding-right: 0;
+	}
+
+	div.objective
+	{
+		background-color: #F3F3F3;
+	}
+
+	div.objective,
+	div.philosophy,
+	div.about.container
+	{
+		padding: 2.5rem 1rem;
+	}
  }
