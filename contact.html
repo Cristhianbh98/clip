@@ -53,10 +53,13 @@
     <!--Fin del header de la página-->
 
     <main id="about__main">
-        <div class="gray-bg">
+        <section class="contact-info__section gray-bg">
+            <div class="title__container">
+                <h3 class="title-contact-form">¡Contáctanos!</h3>
+            </div>
             <div class="container two-columns">
                 <div class="contact-form__column">
-                    <h3 class="title-contact-form">¡Contáctanos!</h3>
+                    
                     <div class="contact-form__container">
                         <div class="contact-form__info">
                             <p>
@@ -66,26 +69,46 @@
                         <div class="contact-form__form">
                             <form id="contact-form">
                                 <div class="form-group two-inputs">
-                                    <label for="first_name">Nombres:</label>
-                                    <input type="text" name="first_name" id="first_name"/>
-                                    <input type="text" name="last_name" id="last_name"/>
+                                    <div class="label__container__form">
+                                        <label for="first_name">Nombres:</label>
+                                    </div>
+                                    <div class="input__container__form">
+                                        <input type="text" name="first_name" id="first_name"/>
+                                        <input type="text" name="last_name" id="last_name"/>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email"/>
+                                <div class="form-group one-input">
+                                    <div class="label__container__form">
+                                        <label for="email">Email:</label>
+                                    </div>
+                                    <div class="input__container__form">
+                                        <input type="email" name="email" id="email"/>
+                                    </div>
                                 </div>
                                 <div class="form-group two-inputs">
-                                    <label for="provincia">Dirección:</label>
-                                    <input type="text" placeholder="Provincia..." name="provincia" id="provincia"/>
-                                    <input type="text" placeholder="Ciudad..." name="city" id="city"/>
+                                    <div class="label__container__form">
+                                        <label for="provincia">Dirección:</label>
+                                    </div>
+                                    <div class="input__container__form">
+                                        <input type="text" placeholder="Provincia..." name="provincia" id="provincia"/>
+                                        <input type="text" placeholder="Ciudad..." name="city" id="city"/>
+                                    </div>
+                                </div>
+                                <div class="form-group one-input">
+                                    <div class="label__container__form">
+                                        <label for="phone">Teléfono:</label>
+                                    </div>
+                                    <div class="input__container__form">
+                                        <input type="text" name="phone" id="phone"/>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Teléfono:</label>
-                                    <input type="text" name="phone" id="phone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="msg">Mensaje:</label>
-                                    <textarea name="msg" id="msg"></textarea>
+                                    <div class="label__container__form">
+                                        <label for="msg">Mensaje:</label>
+                                    </div>
+                                    <div class="input__container__form">
+                                        <textarea name="msg" id="msg"></textarea>
+                                    </div>
                                 </div>
                                 <div class="submit-group">
                                     <input type="submit" value="Enviar"/>
@@ -140,11 +163,11 @@
                 </div>
             </div>
         
-        </div>
+        </section>
 
-        <div class="google-maps__container">
+        <section class="google-maps__container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.126534963049!2d-79.92792068527865!3d-2.1047751376601798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d0d233dcb36d5%3A0xde7b98ffea0850d2!2sClip%20House!5e0!3m2!1sen!2sec!4v1626569470260!5m2!1sen!2sec" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        </section>
         
     </main>
 

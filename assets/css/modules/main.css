@@ -517,6 +517,16 @@
  *Estilos del contenido principal de la página contact
  *-----------------------------------*/
 
+ #about__main .container.two-columns
+ {
+	padding: 0;
+ }
+
+ section.contact-info__section
+ {	
+	padding: 5rem 2rem;
+ }
+
  .contact-form__column
  {
 	width: 70% !important;
@@ -529,9 +539,39 @@
 
   /*Estilos de la columna del formulario*/
 
+  .title__container
+  {
+	padding-bottom: 2.5rem;
+	max-width: 1200px;
+	margin: auto;
+  }
+
   h3.title-contact-form
   {
 	color: var(--primary--color);
+	font-size: 3rem;
+  }
+
+  .contact-form__container
+  {
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 10px 20px rgba(154, 154, 154, 0.8);
+  }
+
+  .contact-form__info
+  {
+	background-color: var(--primary--color);
+	color: #fff;
+	padding: 1rem;
+	border-radius: 5px 5px 0 0;
+  }
+
+  .contact-form__form
+  {
+	padding: 1rem;
+	padding-bottom: 3rem;
   }
 
   /*Estilos de la columna de información de contacto*/

@@ -15,5 +15,8 @@
   /*Importar los estilos del buscador*/
   @import url('./modules/search.css');
 
-  /*importar los estilos del contenido principal*/
+  /*Importar los estilos del contenido principal*/
   @import url('./modules/main.css');
+
+  /*Importar los estilos del formulario*/
+  @import url('./modules/form.css');
