@@ -1,0 +1,215 @@
+/*-----------------------------------*
+ *Estilos de la cabecera principal
+ *-----------------------------------*/
+
+ header#header
+ {
+	height: 700px;
+	width: 100%;
+ }
+
+ @media screen and (max-width: 450px)
+ {
+	header#header
+	{
+		height: 550px;
+	}
+ }
+
+ .header-hero
+ {
+	background: url('../img/chica-con-lentes.jpg');
+	height: inherit;
+	width: inherit;
+	background-size: cover;
+	background-position: top;
+ }
+
+ .header-hero__transparent__background
+ {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	background-color: rgba(59, 74, 107, 0.70);
+ }
+
+ .header-hero__menu-logo__container
+ {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+ }
+
+ .header-hero__menu-logo__container .header-hero__logo a
+ {
+	display: flex;
+	align-items: center;
+	color: var(--secondary--color);
+	font-weight: bold;
+	transition: transform 0.2s;
+ }
+
+ .header-hero__menu-logo__container .header-hero__logo a:hover
+ {
+	transform: scale(0.9);
+ }
+
+ .header-hero__menu-logo__container .header-hero__logo a > img
+ {
+	width: 80px;
+ }
+
+ .header-hero__menu-logo__container .header-hero__logo a > h1
+ {
+	font-size: 3rem;
+	margin-left: 1rem;
+ }
+
+ .header-hero__menu-logo__container nav.header-hero__menu > ul
+ {
+	list-style: none;
+	font-size: 1.5rem;
+	display: flex;
+ }
+
+ .header-hero__menu-logo__container nav.header-hero__menu > ul > li
+ {
+	 margin-left: 1.5rem;
+ }
+
+ .header-hero__menu-logo__container nav.header-hero__menu > ul > li > a
+ {
+	color: #fff;
+	font-weight: 500;
+	transition: color 0.3s linear;
+ }
+
+ .header-hero__menu-logo__container nav.header-hero__menu > ul > li > a.active,
+ .header-hero__menu-logo__container nav.header-hero__menu > ul > li > a:hover
+ {
+	color: var(--secondary--color) ;
+ }
+
+ .header-hero__menu__mobile
+ {
+	display: none;
+ }
+
+ .hamburger-icon__container
+ {
+	cursor: pointer;
+	height: 40px;
+    display: flex;
+    align-items: center;
+ }
+
+ .hamburger-icon
+ {
+	display: block;
+	width: 40px;
+	height: 5px;
+	position: relative;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+ }
+
+ .hamburger-icon::before,
+ .hamburger-icon::after
+ {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 5px;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+	transition: 0.5s;
+ }
+
+ .hamburger-icon::before
+ {
+	top: -15px;
+ }
+
+ .hamburger-icon::after
+ {
+	top: 15px;
+ }
+
+ .hamburger-icon.actived__hamburguer
+ {
+	background: rgba(0, 0, 0, 0);
+ }
+
+ .hamburger-icon.actived__hamburguer::before
+ {
+	top: 0;
+	transform: rotate(45deg);
+ }
+
+ .hamburger-icon.actived__hamburguer::after
+ {
+	top: 0;
+	transform: rotate(-45deg);
+ }
+
+ @media screen and (max-width: 850px )
+ {
+	nav.header-hero__menu
+	{
+		max-height: 0;
+		overflow: hidden;
+		width: 100%;
+		position: absolute;
+		top: 120px;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.35);
+		transition: max-height 0.2s;
+	}
+
+	nav.header-hero__menu ul
+	{
+		display: flex;
+		flex-flow: column;
+		padding: 0.5rem 2rem;
+	}
+
+	nav.header-hero__menu ul > li
+	{
+		margin: 0.8rem 0;
+	}
+
+	.header-hero__menu__mobile
+	{
+		display: block;
+	}
+ }
+
+/*--------------------------------------------------------*
+ *Estilos de la cabecera principal de la página about
+ *--------------------------------------------------------*/
+ 
+ header#header.no-search-item
+ {
+	height: 500px;
+ }
+
+ header#header.no-search-item.about .header-hero
+ {
+	background: url('../img/about-backgroundjpg.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 70% 30%;
+ }
+
+/*--------------------------------------------------------*
+ *Estilos de la cabecera principal de la página contact
+ *--------------------------------------------------------*/
+
+ header#header.no-search-item.contact .header-hero
+ {
+    background: url('../img/contact-page-hero-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+ }

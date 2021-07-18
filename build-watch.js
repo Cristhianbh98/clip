@@ -6,7 +6,6 @@ build({
     bundle: true,
     watch: true,
     minify: true,
-    sourcemap: true,
 });
 
 build({

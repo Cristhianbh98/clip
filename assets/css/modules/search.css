@@ -1,0 +1,180 @@
+/*-----------------------------------*
+  * Estilos del buscador
+  *-----------------------------------*/
+
+  :root
+  {
+	--search--container-height: 50px;
+	--font-size-search: 1.125rem;
+  }
+
+ .header-hero .header-hero__search
+ {
+	margin-top: 300px;
+	display: flex;
+	justify-content: center;
+ }
+
+ .header-hero .header-hero__search form.search-form
+ {
+	background-color: #fff;
+	display: block;
+	border-radius: 2px;
+	position: relative;
+	font-size: var(--font-size-search);
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content
+ {
+	display: flex;
+	justify-content: center;
+	flex-flow: row;
+	height: var(--search--container-height);
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container
+ {
+	position: relative;	
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container::before
+ {
+	content: '';
+	width: 1px;
+	height: 60%;
+	background-color: #cfd9e0;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container span.category
+ {
+	position: relative;
+	display: block;
+	width: 150px;
+	padding: 0 .8rem;
+	line-height: var(--search--container-height);
+	cursor: pointer;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container span.category::after
+ {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	border-left: 4px solid rgba(0,0,0,0);
+    border-right: 4px solid rgba(0,0,0,0);
+    border-top: 4px solid var(--thrid--color);
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick
+ {
+	background-color: #fff;
+	padding: 0.3rem 0.5rem;
+	display: none;
+	position: absolute;
+	width:  150px;
+	margin-top: 10px;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container.actived .category-pick
+ {
+	display: block;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick::before
+ {
+	content: '';
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid #fff;
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	margin: -4px 0 0;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick .radio-container
+ {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	font-size: 1rem;
+	margin: .5rem 0;
+	cursor: pointer;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick .radio-container .radio__indicator
+ {
+	display: inline-block;
+	background-color: #fff;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 1px #cfd9e0;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick .radio-container.checked
+ .radio__indicator
+ {
+	box-shadow: inset 0 0 0 5px #0c75f7;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content .category-container .category-pick .radio-container .radio__link
+ {
+	margin-left: .5rem;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content input.s_product
+ {
+	position: relative;
+	font-size: var(--font-size-search);
+	display: block;
+	border: none;
+	outline: none;
+	padding: 0.5rem;
+	width: 400px;
+	color: #414141;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content button.btn.btn-search
+ {
+	position: relative;
+	display: block;
+	font-size: var(--font-size-search);
+	background: transparent;
+	outline: none;
+	border: none;
+	border-left: 1px solid #cfd9e0;
+	cursor: pointer;
+	min-height: var(--search--container-height);
+	border-radius: 0;
+	padding: 0 1rem;
+	transition: background-color .2s ease-out;
+ }
+
+ .header-hero .header-hero__search form.search-form .form-content button.btn.btn-search:hover,
+ .header-hero .header-hero__search form.search-form .form-content button.btn.btn-search:focus
+ {
+	background-color: #0c75f7;
+	color: #fff;
+ }
+
+ @media screen and (max-width: 650px)
+ {
+	form.search-form .form-content .category-container
+	{
+		display: none;
+	}
+
+	.header-hero .header-hero__search form.search-form .form-content input.s_product
+	{
+		width: auto;
+	}
+ }
