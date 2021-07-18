@@ -98,3 +98,41 @@ form .submit-group input[type="submit"]:hover
 {
     background-color: #f23558cc;
 }
+
+@media screen and (max-width: 500px)
+{
+    form .form-group
+    {
+        flex-flow: column;
+    }
+
+    form .submit-group .space-divider
+    {
+        display: none;
+    }
+
+    form .form-group .label__container__form,
+    form .form-group .input__container__form,
+    form .submit-group .input__container__button
+    {
+        width: 100%;
+    }
+
+    form .form-group .label__container__form
+    {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    form .form-group.two-inputs .input__container__form
+    {
+        flex-flow: column;
+    }
+
+    form .form-group.two-inputs .input__container__form input
+    {
+        margin: 10px 0 !important;
+    }
+}
