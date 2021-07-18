@@ -52,18 +52,97 @@
     </header>
     <!--Fin del header de la página-->
 
-	<form>
-		<h3>DATOS</h3>
-		<input type="text" placeholder="Nombres"/>
-		<input type="text" placeholder="Apellidos"/>
-		<input type="text" placeholder="Ciudad"/>
-		<input type="text" placeholder="Direccion"/>
-		<input type="text" placeholder="Codigo postal"/>
-		<input type="text" placeholder="Pais"/>
-		<input type="text" placeholder="Provincia"/>
-		<input type="number" placeholder="Telefono"/>
-		<input type="submit" value="Entrar"/>	
-	</form>
+    <main>
+        <div>
+            <div>
+                <h3>¡Contáctanos!</h3>
+                <div>
+                    <div>
+                        <p>
+                            Cuéntanos lo que estás buscando, ¡nosotros te podemos ayudar!
+                        </p>
+                    </div>
+                    <div>
+                        <form id="contact-form">
+                            <div>
+                                <label for="first_name">Nombres:</label>
+                                <input type="text" name="first_name" id="first_name"/>
+                                <input type="text" name="last_name" id="last_name"/>
+                            </div>
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email"/>
+                            </div>
+                            <div>
+                                <label for="provincia">Dirección:</label>
+                                <input type="text" placeholder="Provincia..." name="provincia" id="provincia"/>
+                                <input type="text" placeholder="Ciudad..." name="city" id="city"/>
+                            </div>
+                            <div>
+                                <label for="phone">Teléfono:</label>
+                                <input type="text" name="phone" id="phone"/>
+                            </div>
+                            <div>
+                                <label for="msg">Mensaje:</label>
+                                <textarea name="msg" id="msg"></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" value="Enviar"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h3>DIRECCIÓN</h3>
+                    <p>Avenida Portoviejo St. 900</p>
+                    <p>Alborada, SD 845124</p>
+                </div>
+                <div>
+                    <h3>TELÉFONO</h3>
+                    <p>+593 89 4578 451</p>
+                </div>
+                <div>
+                    <h3>REDES SOCIALES</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50.294" height="50" viewBox="0 0 81.871 81.392">
+                                    <path id="facebook-brands" d="M88.487,48.243A40.243,40.243,0,1,0,41.955,88V59.877H31.732V48.243H41.955V39.377c0-10.085,6-15.656,15.2-15.656a61.934,61.934,0,0,1,9.009.785v9.9H61.089c-5,0-6.557,3.1-6.557,6.285v7.554H65.692L63.908,59.877H54.531V88A40.258,40.258,0,0,0,88.487,48.243Z" transform="matrix(1, -0.017, 0.017, 1, -8.138, -6.454)" fill="#3b5998"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50.011" height="50" viewBox="0 0 80.018 80">
+                                    <defs>
+                                      <linearGradient id="linear-gradient" x1="0.782" y1="0.045" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#725dd2"/>
+                                        <stop offset="0.479" stop-color="#ff2900"/>
+                                        <stop offset="1" stop-color="#ffde3b"/>
+                                      </linearGradient>
+                                    </defs>
+                                    <path id="instagram-brands" d="M39.943,51.314A20.511,20.511,0,1,0,60.454,71.825,20.479,20.479,0,0,0,39.943,51.314Zm0,33.846A13.335,13.335,0,1,1,53.278,71.825,13.359,13.359,0,0,1,39.943,85.16ZM66.077,50.475a4.784,4.784,0,1,1-4.784-4.784A4.773,4.773,0,0,1,66.077,50.475Zm13.585,4.856c-.3-6.409-1.767-12.085-6.462-16.762-4.677-4.677-10.354-6.141-16.762-6.462-6.6-.375-26.4-.375-33.007,0-6.391.3-12.067,1.767-16.762,6.444S.527,48.9.206,55.313c-.375,6.6-.375,26.4,0,33.007.3,6.409,1.767,12.085,6.462,16.762s10.354,6.141,16.762,6.462c6.6.375,26.4.375,33.007,0,6.409-.3,12.085-1.767,16.762-6.462,4.677-4.677,6.141-10.354,6.462-16.762.375-6.6.375-26.384,0-32.989ZM71.129,95.406a13.5,13.5,0,0,1-7.6,7.6c-5.266,2.089-17.762,1.607-23.581,1.607s-18.333.464-23.581-1.607a13.5,13.5,0,0,1-7.6-7.6C6.668,90.14,7.15,77.644,7.15,71.825S6.686,53.492,8.757,48.244a13.5,13.5,0,0,1,7.6-7.6c5.266-2.089,17.762-1.607,23.581-1.607s18.333-.464,23.581,1.607a13.5,13.5,0,0,1,7.6,7.6c2.089,5.266,1.607,17.762,1.607,23.581S73.217,90.158,71.129,95.406Z" transform="translate(0.075 -31.825)" fill="url(#linear-gradient)"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="43.748" height="50" viewBox="0 0 69.997 80">
+                                    <path id="tiktok-brands" d="M70.125,32.806a32.83,32.83,0,0,1-19.187-6.134V54.6A25.4,25.4,0,1,1,29.021,29.43V43.479A11.662,11.662,0,1,0,37.184,54.6V0H50.937a18.939,18.939,0,0,0,.291,3.465h0A19.1,19.1,0,0,0,59.653,16,18.978,18.978,0,0,0,70.125,19.15Z" transform="translate(-0.128)"/>
+                                </svg>                                  
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.126534963049!2d-79.92792068527865!3d-2.1047751376601798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d0d233dcb36d5%3A0xde7b98ffea0850d2!2sClip%20House!5e0!3m2!1sen!2sec!4v1626569470260!5m2!1sen!2sec" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+    </main>
 
 	<!--Inicio del footer-->
     <footer id="footer">
