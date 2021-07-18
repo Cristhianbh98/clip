@@ -549,14 +549,14 @@
   h3.title-contact-form
   {
 	color: var(--primary--color);
-	font-size: 3rem;
+	font-size: 2.5rem;
   }
 
   .contact-form__container
   {
-	display: inline-block;
 	background-color: #fff;
 	border-radius: 5px;
+	max-width: 650px;
 	box-shadow: 0 10px 20px rgba(154, 154, 154, 0.8);
   }
 
@@ -564,14 +564,64 @@
   {
 	background-color: var(--primary--color);
 	color: #fff;
-	padding: 1rem;
+	padding: 1rem 2rem;
 	border-radius: 5px 5px 0 0;
   }
 
   .contact-form__form
   {
-	padding: 1rem;
+	padding: 1rem 2rem;
 	padding-bottom: 3rem;
   }
 
   /*Estilos de la columna de información de contacto*/
+
+  div.info__container
+  {
+	margin: 20px 0;
+  }
+
+  div.info__container:first-child
+  {
+	margin-top: 0;
+  }
+
+  div.info__container h3
+  {
+	font-size: 1.3rem;
+	font-weight: 500;
+	color: #313131;
+  }
+
+  div.info__container p
+  {
+	font-size: 1rem;
+	color: #6B6B6B;
+  }
+
+  div.info__container ul.social-media__list
+  {
+	margin-top: 10px;
+	list-style: none;
+	display: flex;
+  }
+
+  div.info__container ul.social-media__list li
+  {
+	margin: 0 10px;
+  }
+
+  div.info__container ul.social-media__list li:first-child
+  {
+	margin-left: 0;
+  }
+
+  div.info__container ul.social-media__list li svg
+  {
+	transition: transform 0.2s;
+  }
+
+  div.info__container ul.social-media__list li svg:hover
+  {
+	transform: scale(0.85);	  
+  }
